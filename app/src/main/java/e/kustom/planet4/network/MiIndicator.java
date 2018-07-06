@@ -9,4 +9,5 @@ public interface MiIndicator {
 
     @GET("/api/{indicator}/{name}")
     Call <Planet> indicatorByName(@Path("indicator") String indicator, @Path("name") String name);
+
 }
