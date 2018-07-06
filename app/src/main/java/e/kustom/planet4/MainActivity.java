@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 new Backgroundname().execute("name","Alderaan");
+                 new Backgroundname().execute("2");
                  new BackgroungClimate().execute("climate","temperate");
 
                  nameTv= findViewById(R.id.nameTv);
