@@ -7,7 +7,7 @@ import retrofit2.http.Path;
 
 public interface MiIndicator {
 
-    @GET("/api/{indicator}/{name}")
-    Call <Planet> indicatorByName(@Path("indicator") String indicator, @Path("name") String name);
+    @GET("/api/planets/{count}/")
+    Call <Planet> indicatorByName(@Path("count") String count);
 
 }

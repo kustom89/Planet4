@@ -13,7 +13,7 @@ public class GetPlanetDate extends AsyncTask<String, Void, Planet> {
     @Override
     protected Planet doInBackground(String... params) {
         MiIndicator miIndicator = new PlanetInterceptor().getBasic();
-        Call <Planet> indicator = miIndicator.indicatorByName(params[0], params[1]);
+        Call <Planet> indicator = miIndicator.indicatorByName("2");
         try {
             Response <Planet> response = indicator.execute();
             if (200 == response.code() && response.isSuccessful()) {

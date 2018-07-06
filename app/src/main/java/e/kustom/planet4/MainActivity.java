@@ -12,6 +12,7 @@ import e.kustom.planet4.models.Planet;
 import e.kustom.planet4.network.GetPlanetDate;
 
 public class MainActivity extends AppCompatActivity {
+    TextView nameTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                  new Backgroundname().execute("name","Alderaan");
                  new BackgroungClimate().execute("climate","temperate");
+
+                 nameTv= findViewById(R.id.nameTv);
+                 nameTv.setVisibility(View.VISIBLE);
 
             }
         });
@@ -46,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Planet planet) {
         if(planet != null){
             TextView textView= findViewById(R.id.nameTv);
-            textView.setText(planet.getResults()[0].getName());
+            textView.setText(planet.getResults()[0].getUrl());
 
 
         }
