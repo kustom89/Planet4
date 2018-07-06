@@ -7,13 +7,13 @@ public class PlanetInterceptor {
 
     private static final String BASE_URL="http://swapi.co/";
 
-    public MyPlanet getBasic(){
+    public MiIndicator getBasic(){
         Retrofit planetIntercetor=new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        MyPlanet indicadorRequest= planetIntercetor.create(MyPlanet.class);
+        MiIndicator indicadorRequest= planetIntercetor.create(MiIndicator.class);
 
         return indicadorRequest;
 

@@ -1,7 +1,6 @@
 package e.kustom.planet4.network;
 
 import android.os.AsyncTask;
-import android.telecom.Call;
 
 import java.io.IOException;
 
@@ -11,8 +10,8 @@ import retrofit2.Response;
 public class GetPlanetDate extends AsyncTask<String, Void, Planet> {
     @Override
     protected Planet doInBackground(String... params) {
-        MyPlanet myPlanet = new PlanetInterceptor().getBasic();
-        retrofit2.Call <Planet[]> planet=myPlanet.indicatorByUrl("Alderaan");
+        MiIndicator myPlanet = new PlanetInterceptor().getBasic();
+        retrofit2.Call <Planet[]> planet=myPlanet.indicatorByName("Alderaan");
         try{
             Response<Planet[]> response =planet.execute();
             if(200 == response.code()&& response.isSuccessful()){
