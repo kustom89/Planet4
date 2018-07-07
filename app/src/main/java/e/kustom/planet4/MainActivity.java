@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import e.kustom.planet4.models.Planet;
+import e.kustom.planet4.models.Planets;
 import e.kustom.planet4.network.GetPlanetDate;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 new Backgroundname().execute("2");
-                 new BackgroungClimate().execute("climate","temperate");
+                 new Backgroundname().execute();
+
 
                  nameTv= findViewById(R.id.nameTv);
                  nameTv.setVisibility(View.VISIBLE);
@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Planet planet) {
+        protected void onPostExecute(Planets planet) {
         if(planet != null){
             TextView textView= findViewById(R.id.nameTv);
-            textView.setText(planet.getResults()[0].getUrl());
+            textView.setText(planet.getSerie()[0].getName());
 
 
         }
@@ -58,17 +58,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class BackgroungClimate extends GetPlanetDate{
 
-        @Override
-        protected void onPostExecute(Planet planet) {
-            if (planet != null) {
-                TextView textView= findViewById(R.id.climateTv);
-                textView.setText(planet.getResults()[0].getClimate());
-
-
-            }
-        }
-    }
 
 }
